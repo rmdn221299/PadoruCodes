@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_code"
+            android:icon="@drawable/ic_code"
+            android:title="Code">
+        </item>
+        <item
+            android:id="@+id/nav_color"
+            android:icon="@drawable/ic_color"
+            android:title="Colour">
+        </item>
+
+        <item
+            android:id="@+id/nav_example"
+            android:icon="@drawable/ic_example"
+            android:title="Example">
+
+        </item>
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_baseline_share_24"
+            android:title="Share">
+
+        </item>
+    </group>
+
+    <item android:title="About">
+        <menu>
+
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_profile"
+                android:title="Profile">
+            </item>
+
+        </menu>
+    </item>
+</menu>

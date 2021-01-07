@@ -1,0 +1,235 @@
+package com.example.bottomnav;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.ArrayList;
+
+public class SecondFragment extends Fragment {
+
+    private ArrayList<Integer> fotoContent = new ArrayList<>();
+    private ArrayList<String> namaContent = new ArrayList<>();
+    private ArrayList<String> infoContent = new ArrayList<>();
+
+    View view;
+    RecyclerView recyclerView;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    
+        view = inflater.inflate(R.layout.fragment_second, container, false);
+        recyclerView = view.findViewById(R.id.recycleViewId);
+        getData();
+        return view;
+    }
+
+    private void prosesRecycleViewAdapter(){
+        RecycleViewAdapter adapter = new RecycleViewAdapter(fotoContent, namaContent,infoContent, getContext());
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    }
+
+    private void getData(){
+            namaContent.add("ReciyleView-xml");
+            fotoContent.add(R.drawable.code5);
+            infoContent.add("    <androidx.recyclerview.widget.RecyclerView\n" +
+                    "        android:id=\"@+id/recycleViewId\"\n" +
+                    "        android:layout_width=\"match_parent\"\n" +
+                    "        android:layout_height=\"match_parent\"\n" +
+                    "        app:layout_constraintBottom_toBottomOf=\"parent\"\n" +
+                    "        app:layout_constraintEnd_toEndOf=\"parent\"\n" +
+                    "        app:layout_constraintStart_toStartOf=\"parent\"\n" +
+                    "        app:layout_constraintTop_toTopOf=\"parent\" />\n" +
+                    "</androidx.constraintlayout.widget.ConstraintLayout>");
+
+
+            namaContent.add("ImageView-xml");
+            fotoContent.add(R.drawable.code2);
+            infoContent.add("    <ImageView\n" +
+                    "        android:layout_width=\"match_parent\"\n" +
+                    "        android:layout_height=\"match_parent\"\n" +
+                    "        android:src=\"@drawable/padoru\"\n" +
+                    "        app:layout_constraintBottom_toBottomOf=\"parent\"\n" +
+                    "        app:layout_constraintEnd_toEndOf=\"parent\"\n" +
+                    "        app:layout_constraintStart_toStartOf=\"parent\"\n" +
+                    "        app:layout_constraintTop_toTopOf=\"parent\" />");
+
+            namaContent.add("ImageButton-xml");
+            fotoContent.add(R.drawable.code3);
+            infoContent.add("        <ImageButton\n" +
+                    "            android:id=\"@+id/button\"\n" +
+                    "            android:layout_width=\"40dp\"\n" +
+                    "            android:layout_height=\"40dp\"\n" +
+                    "            android:layout_marginStart=\"50dp\"\n" +
+                    "            android:layout_marginTop=\"30dp\"\n" +
+                    "            android:background=\"#641E16\"\n" +
+                    "            app:layout_constraintStart_toStartOf=\"parent\"\n" +
+                    "            app:layout_constraintTop_toBottomOf=\"@+id/textView\" />\n");
+
+            namaContent.add("sidebar/menu-xml");
+            fotoContent.add(R.drawable.code4);
+            infoContent.add(" <group android:checkableBehavior=\"single\">\n" +
+                    "        <item\n" +
+                    "            android:id=\"@+id/nav_code\"\n" +
+                    "            android:icon=\"@drawable/ic_code\"\n" +
+                    "            android:title=\"Home\">\n" +
+                    "        </item>\n" +
+                    "        <item\n" +
+                    "            android:id=\"@+id/nav_color\"\n" +
+                    "            android:icon=\"@drawable/ic_color\"\n" +
+                    "            android:title=\"Colour\">\n" +
+                    "        </item>\n" +
+                    "\n" +
+                    "        <item\n" +
+                    "            android:id=\"@+id/nav_example\"\n" +
+                    "            android:icon=\"@drawable/ic_example\"\n" +
+                    "            android:title=\"Exmple\">\n" +
+                    "\n" +
+                    "        </item>\n" +
+                    "    </group>");
+
+            namaContent.add("Button-xml & java");
+            fotoContent.add(R.drawable.code5);
+            infoContent.add("-------------------------------------------\n" +
+                    "                    XML\n" +
+                    "-------------------------------------------\n" +
+                    "\n" +
+                    "<android.support.v7.widget.AppCompatButton\n" +
+                    "    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n" +
+                    "    android:layout_width=\"wrap_content\"\n" +
+                    "    android:layout_height=\"wrap_content\"\n" +
+                    "    android:paddingLeft=\"25dp\"\n" +
+                    "    android:paddingRight=\"25dp\"\n" +
+                    "    android:text=\"This is button\"\n" +
+                    "    app:backgroundTint=\"#EC407A\"\n" +
+                    "    android:textColor=\"#ffffff\"\n" +
+                    "    android:id=\"@+id/button\"/>\n" +
+                    "\n" +
+                    "-------------------------------------------\n" +
+                    "                    JAVA\n" +
+                    "-------------------------------------------\n" +
+                    "\n" +
+                    "AppCompatButton button2 = findViewById(R.id.button);\n" +
+                    "button2.setOnClickListener(new OnClickListener(){\n" +
+                    "    @Override\n" +
+                    "    public void onClick(View v){\n" +
+                    "    // put your action when button clicked\n" +
+                    "    }\n" +
+                    "});");
+
+            namaContent.add("FrameLayout-xml");
+            fotoContent.add(R.drawable.code6);
+            infoContent.add("<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
+                    "android:id=\"@+id/frameLayout\"\n" +
+                    "android:layout_width=\"fill_parent\"\n" +
+                    "android:layout_height=\"fill_parent\"/>");
+
+            namaContent.add("Floating Action Button");
+            fotoContent.add(R.drawable.code7);
+            infoContent.add("-------------------------------------------\n" +
+                    "                    XML\n" +
+                    "-------------------------------------------\n" +
+                    "\n" +
+                    "<android.support.v7.widget.AppCompatButton\n" +
+                    "    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n" +
+                    "    android:layout_width=\"wrap_content\"\n" +
+                    "    android:layout_height=\"wrap_content\"\n" +
+                    "    android:paddingLeft=\"25dp\"\n" +
+                    "    android:paddingRight=\"25dp\"\n" +
+                    "    android:text=\"This is button\"\n" +
+                    "    app:backgroundTint=\"#EC407A\"\n" +
+                    "    android:textColor=\"#ffffff\"\n" +
+                    "    android:id=\"@+id/button\"/>\n" +
+                    "\n" +
+                    "-------------------------------------------\n" +
+                    "                    JAVA\n" +
+                    "-------------------------------------------\n" +
+                    "\n" +
+                    "AppCompatButton button2 = findViewById(R.id.button);\n" +
+                    "button2.setOnClickListener(new OnClickListener(){\n" +
+                    "    @Override\n" +
+                    "    public void onClick(View v){\n" +
+                    "    // put your action when button clicked\n" +
+                    "    }\n" +
+                    "});");
+
+            namaContent.add("Switch Case-java");
+            fotoContent.add(R.drawable.code8);
+            infoContent.add(
+                    "switch(position) {\n" +
+                    "    case 0:\n" +
+                    "        setContentView(R.layout.xml0);\n" +
+                    "        break;\n" +
+                    "    case 1:\n" +
+                    "        setContentView(R.layout.xml1);\n" +
+                    "        break;\n" +
+                    "    default:\n" +
+                    "        setContentView(R.layout.default);\n" +
+                    "        break;\n" +
+                    "}");
+
+            namaContent.add("OnCreteOptionMenu\n" +
+                    "-java");
+            fotoContent.add(R.drawable.code9);
+            infoContent.add("@Override\n" +
+                    "public boolean onCreateOptionsMenu(Menu menu) {\n" +
+                    "    MenuInflater inflater = getMenuInflater();\n" +
+                    "    inflater.inflate(R.menu.game_menu, menu);\n" +
+                    "    return true;\n" +
+                    "}");
+
+            namaContent.add("AppCompatActivity");
+            fotoContent.add(R.drawable.code10);
+            infoContent.add("import android.os.Bundle;\n" +
+                    "import android.support.v7.app.AppCompatActivity;\n" +
+                    "\n" +
+                    "public class MainActivity extends AppCompatActivity {\n" +
+                    "    @Override\n" +
+                    "    protected void onCreate(Bundle savedInstanceState) {\n" +
+                    "        super.onCreate(savedInstanceState);\n" +
+                    "        setContentView(R.layout.activity_main);\n" +
+                    "    }\n" +
+                    "}");
+
+            namaContent.add("AppCompat Button");
+            fotoContent.add(R.drawable.code1);
+            infoContent.add("-------------------------------------------\n" +
+                    "                    XML\n" +
+                    "-------------------------------------------\n" +
+                    "\n" +
+                    "<android.support.v7.widget.AppCompatButton\n" +
+                    "    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n" +
+                    "    android:layout_width=\"wrap_content\"\n" +
+                    "    android:layout_height=\"wrap_content\"\n" +
+                    "    android:paddingLeft=\"25dp\"\n" +
+                    "    android:paddingRight=\"25dp\"\n" +
+                    "    android:text=\"This is button\"\n" +
+                    "    app:backgroundTint=\"#EC407A\"\n" +
+                    "    android:textColor=\"#ffffff\"\n" +
+                    "    android:id=\"@+id/button\"/>\n" +
+                    "\n" +
+                    "-------------------------------------------\n" +
+                    "                    JAVA\n" +
+                    "-------------------------------------------\n" +
+                    "\n" +
+                    "AppCompatButton button2 = findViewById(R.id.button);\n" +
+                    "button2.setOnClickListener(new OnClickListener(){\n" +
+                    "    @Override\n" +
+                    "    public void onClick(View v){\n" +
+                    "    // put your action when button clicked\n" +
+                    "    }\n" +
+                    "});");
+
+        prosesRecycleViewAdapter();
+
+    }
+}

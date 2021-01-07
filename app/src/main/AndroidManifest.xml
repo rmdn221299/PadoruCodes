@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bottomnav">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_box"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_box"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BottomNav">
+        <activity android:name=".SplashScreen"/>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".Content4" />
+        <activity android:name=".Content3" />
+        <activity android:name=".Content2" />
+        <activity android:name=".Content1" />
+        <activity android:name=".Content5" />
+        <activity android:name=".DetailActivity" />
+    </application>
+
+</manifest>
